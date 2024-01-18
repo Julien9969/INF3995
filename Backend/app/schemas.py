@@ -1,13 +1,13 @@
 from pydantic import BaseModel
-from datetime import datetime
+# from datetime import datetime
 from .classes.something_type import SomethingType
 
 
 class SomethingBase(BaseModel):
-    something: SomethingType
-    value: float
     id: int
-    timestamp: datetime
+    truc: SomethingType
+    # value: float
+    # timestamp: datetime
 
     class Config:
         orm_mode = True

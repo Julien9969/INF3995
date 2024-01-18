@@ -16,8 +16,6 @@ def get_db():
     finally:
         db.close()
 
-sensors_data= dict()
-
         
 @asynccontextmanager
 async def lifespan(app: FastAPI): 
@@ -42,5 +40,5 @@ app.add_middleware(
 
 
 @app.get("/api/{id}", tags=["Something"], response_model=list[schemas.SomethingBase])
-async def sensor(id: int, db: Session = Depends(get_db)):
-    return crud.get_something(db=db, filters={"id":id})
+async def something(id: int, db: Session = Depends(get_db)):
+    return [crud.get_something(db=db, id=id)]
