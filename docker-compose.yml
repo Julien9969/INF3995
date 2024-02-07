@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: ./INF3995-Backend/
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    depends_on:
+      - db
+    networks:
+      - limo-network
+    volumes:
+      - ./INF3995-Backend/app:/src/app 
+    command: ["uvicorn", "app.main:app", "--reload","--host", "0.0.0.0", "--port", "80"]
+
+  db:
+    image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: inf3995    
+      POSTGRES_USER: eq102
+      POSTGRES_PASSWORD: root
+    networks:
+      - limo-network
+
+  test_db:
+    image: postgres
+    command: -p 5555
+    volumes:
+      - postgres_data:/var/lib/postgresql/test_data
+    environment:
+      POSTGRES_DB: test_inf3995    
+      POSTGRES_USER: test_eq102
+      POSTGRES_PASSWORD: test_root
+    networks:
+      - limo-network
+  
+  frontend:
+    # container_name: pj3-front
+    # image: inf3995-frontend
+    # stdin_open: true
+    # tty: true
+    build:
+      context: ./INF3995-Frontend/client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:4200"
+    volumes:
+      - ./INF3995-Frontend/client:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - backend
+    networks:
+      - limo-network
+    command: ["npm", "run", "docker-dev"]
+
+networks:
+  limo-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
