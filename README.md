@@ -26,7 +26,7 @@ Ces 3 dossiers devraient être présent:
 
 3. Lancer le serveur et le client par docker-compose
 ```bash
-docker-compose up
+docker compose up
 ```
 
 4. Se placer dans le répertoire INF3995-Robot
@@ -43,12 +43,7 @@ docker build -t "rosignbase" ./simulation/docker-simulation/
 rocker --x11 --device=/dev/dri --volume $(pwd):/root/INF3995-Robot --port 22900:22900 --port 22901:22901 --port 22902:22902 --port 22910-22921:22910-22921 --image-name=rosign --name=simulation-ign rosignbase 
 ```
 
-6. Lancer la simulation (sur le bash du rocker)
-```bash
-./deploy-simulation.sh
-```
-
-7. Démarrer la simulation dans gazebo 
+6. Démarrer la simulation dans gazebo 
 Appuyer sur le bouton play orange en bas a gauche dans gazebo pour démarrer la simulation
 
 
