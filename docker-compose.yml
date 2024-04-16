@@ -2,12 +2,6 @@ version: '3.9'
 services:
   backend-fastapi:
     build: ./INF3995-Backend
-    # ports:
-    #   - "8000:8000"
-    #   - "22900:22900"
-    #   - "22901:22901"
-    #   - "22902:22902"
-    #   - "22910-22921:22910-22921"
     depends_on:
       - db
     network_mode: host
@@ -22,7 +16,7 @@ services:
       - ROS_DOMAIN_ID=62
       - TERM='xterm-256color'
       - SQLALCHEMY_DATABASE_HOST=localhost
-      - DEPLOYMENT=PROD
+      - DEPLOYMENT=DEV # or PROD
     command: /bin/bash -c "/start-app.sh"
   db:
     image: postgres:13
