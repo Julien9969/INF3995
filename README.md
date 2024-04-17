@@ -6,6 +6,7 @@
 - [Docker Compose](https://docs.docker.com/compose/install/)
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [rocker](https://github.com/osrf/rocker)
+- [nvm v20.12.2](https://nodejs.org/en/blog/release/v20.12.2)
 
 ## Installation (Linux)
 
@@ -48,7 +49,8 @@ rocker --x11 --device=/dev/dri --volume $(pwd):/root/INF3995-Robot --port 22900:
 ./deploy-simulation.sh
 ```
 
-7. Démarrer la simulation dans gazebo 
+7. Démarrer la simulation dans gazebo
+
 Appuyer sur le bouton play orange en bas a gauche dans gazebo pour démarrer la simulation
 
 
@@ -60,20 +62,25 @@ Appuyer sur le bouton play orange en bas a gauche dans gazebo pour démarrer la 
 
 ## Tests
 1. Test unitaires Backend
+
 Ouvrir un nouveau terminal et executer la commande suivante:
+
 ```bash
 docker exec -it backend-container bash -c "cd /src/app/ros_nodes/src/backend_server && pytest --ignore=./test --cov-report term-missing --cov=backend_server backend_server/"
 ```
 
 2. Test unitaires Frontend
+
 Ouvrir un nouveau terminal et executer la commande suivante:
+
 ```bash
 docker exec -it frontend-angular bash -c "cd /src/app && npm run coverage-gitlab"
 ```
 
 
 
-7. Ouvrir un shell dans la simulation
+3. Ouvrir un shell dans la simulation
+
 ```bash
 docker exec -it simulation-ign bash 
 ```
