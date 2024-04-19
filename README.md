@@ -34,7 +34,7 @@ cd INF3995-Robot
 
 5. Build et démarrer de docker de simulation
 ```bash
-docker build -t "rosignbase" ./simulation/docker-simulation/
+docker build -t "rosignbase" ./simulation
 ```
 
 ```bash

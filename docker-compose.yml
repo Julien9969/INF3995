@@ -29,8 +29,6 @@ services:
       POSTGRES_USER: eq102
       POSTGRES_PASSWORD: root  
   frontend-angular:
-    ports:
-      - "4200:4200"
     build: ./INF3995-Frontend/client
     network_mode: host
     image: inf3995-frontend
