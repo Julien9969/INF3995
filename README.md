@@ -1,6 +1,6 @@
 ## Prérequis
 - [Docker](https://docs.docker.com/get-docker/)
-- [Docker Compose](https://docs.docker.com/compose/install/)
+- [Docker Compose (v2)](https://docs.docker.com/compose/)
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [rocker](https://github.com/osrf/rocker)
 - [nvm v20.12.2](https://nodejs.org/en/blog/release/v20.12.2)
@@ -22,7 +22,7 @@ Ces 3 dossiers devraient être présent:
 - `INF3995-Robot`
 
 
-3. Lancer le serveur et le client par docker-compose
+3. Lancer le serveur et le client par docker compose
 ```bash
 docker compose up
 ```
