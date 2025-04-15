@@ -9,7 +9,7 @@
 
 1. Cloner le projet avec les **submodules**
 ```bash
-git clone --recurse-submodules git@gitlab.com:polytechnique-montr-al/inf3995/20241/equipe-102/INF3995-102.git
+git clone --recurse-submodules https://github.com/Julien9969/INF3995.git
 ```
 
 2. Se placer dans le répertoire du projet
