@@ -1,9 +1,9 @@
 [submodule "INF3995-Robot"]
 	path = INF3995-Robot
-	url = git@gitlab.com:polytechnique-montr-al/inf3995/20241/equipe-102/INF3995-Robot.git
+	url = https://github.com/Julien9969/INF3995-Robot.git
 [submodule "INF3995-Frontend"]
 	path = INF3995-Frontend
-	url = git@gitlab.com:polytechnique-montr-al/inf3995/20241/equipe-102/INF3995-Frontend.git
+	url = https://github.com/Julien9969/INF3995-Frontend.git
 [submodule "INF3995-Backend"]
 	path = INF3995-Backend
-	url = git@gitlab.com:polytechnique-montr-al/inf3995/20241/equipe-102/INF3995-Backend.git
+	url = https://github.com/Julien9969/INF3995-Backend.git
